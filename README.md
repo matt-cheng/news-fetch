@@ -1,2 +1,2 @@
-# news-fetch
+# news-digest
 fetching daily personalized news
