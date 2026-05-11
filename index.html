@@ -24,8 +24,6 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
   html,body{height:100%;background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);transition:background .2s,color .2s}
-
-  /* Header */
   .header{position:sticky;top:0;z-index:100;background:var(--header-bg);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);padding:calc(var(--safe-top) + 14px) 20px 0;transition:background .2s,border-color .2s}
   .header-top{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:680px;margin:0 auto;padding-bottom:12px}
   .header-left h1{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;line-height:1;color:var(--text);transition:color .2s}
@@ -36,18 +34,13 @@
   .refresh-btn{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;flex-shrink:0;transition:background .15s,border-color .2s,color .2s}
   .refresh-btn:active{background:var(--surface2)}
   .refresh-btn.loading{color:var(--muted)}
-
-  /* Search */
   .search-bar{max-width:680px;margin:0 auto;padding:0 0 12px;display:none}
   .search-bar.open{display:block}
   .search-inner{display:flex;align-items:center;gap:8px;background:var(--search-bg);border-radius:12px;padding:9px 14px;transition:background .2s}
-  .search-icon{color:var(--muted);font-size:15px;flex-shrink:0}
-  .search-input{flex:1;background:none;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);min-width:0;transition:color .2s}
+  .search-input{flex:1;background:none;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);min-width:0}
   .search-input::placeholder{color:var(--faint)}
   .search-clear{font-size:18px;color:var(--faint);cursor:pointer;line-height:1;visibility:hidden}
   .search-clear.show{visibility:visible}
-
-  /* Topics */
   .topics-bar{background:var(--bg);border-bottom:1px solid var(--border);padding:12px 20px;transition:background .2s,border-color .2s}
   .topics-bar-inner{max-width:680px;margin:0 auto}
   .topics-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:9px}
@@ -58,9 +51,7 @@
   .add-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:20px;font-size:12.5px;border:1px dashed var(--faint);color:var(--muted);background:transparent;cursor:pointer}
   .add-input-wrap{display:inline-flex;align-items:center;gap:6px}
   .add-input-wrap input{font-size:13px;padding:5px 11px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-family:'DM Sans',sans-serif;outline:none;width:130px;transition:background .2s,border-color .2s,color .2s}
-  .add-input-wrap button{font-size:12px;padding:5px 10px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s,color .2s}
-
-  /* Feed */
+  .add-input-wrap button{font-size:12px;padding:5px 10px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-family:'DM Sans',sans-serif}
   .feed{max-width:680px;margin:0 auto;padding:20px 20px calc(var(--safe-bottom) + 40px)}
   .topic-section{margin-bottom:28px}
   .topic-section.hidden{display:none}
@@ -68,40 +59,31 @@
   .section-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
   .section-title{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
   .section-line{flex:1;height:1px;background:var(--border);transition:background .2s}
-
-  /* Cards */
   .story-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:9px;text-decoration:none;display:block;color:inherit;transition:border-color .15s,transform .1s,background .2s;-webkit-touch-callout:none}
   .story-card:active{transform:scale(.99);border-color:var(--faint)}
   .story-card.hidden{display:none}
   .story-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:6px}
   .story-headline{font-size:14px;font-weight:500;color:var(--text);line-height:1.45;flex:1;transition:color .2s}
   .story-tag{font-size:10px;font-weight:600;letter-spacing:.03em;padding:3px 8px;border-radius:7px;white-space:nowrap;flex-shrink:0;margin-top:1px}
-  .story-summary{font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:8px;transition:color .2s}
+  .story-summary{font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:8px}
   .story-meta{font-size:11px;color:var(--faint);display:flex;align-items:center;gap:5px}
   .story-meta-arrow{margin-left:auto;font-size:11px}
   mark{background:#ffe566;color:#111;border-radius:2px;padding:0 1px}
   [data-theme="dark"] mark{background:#7a5e00;color:#ffe599}
-
-  /* Skeleton */
   .skeleton{background:var(--skeleton);border-radius:6px;animation:pulse 1.4s ease-in-out infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-  .skeleton-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:9px;transition:background .2s,border-color .2s}
+  .skeleton-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:9px}
   .no-stories{font-size:13px;color:var(--faint);padding:8px 0 4px}
-
-  /* Search info */
   .search-info{font-size:12px;color:var(--muted);margin-bottom:4px;padding-top:4px;min-height:24px}
   .no-results{display:none;text-align:center;padding:40px 20px;color:var(--muted);font-size:14px}
   .no-results.show{display:block}
   .no-results-icon{font-size:32px;margin-bottom:10px}
-
-  /* Install */
   .install-banner{margin:0 0 20px;background:#fff8ee;border:1px solid #f5d78e;border-radius:var(--radius);padding:13px 16px;font-size:13px;color:#7a5000;line-height:1.5;display:flex;align-items:flex-start;gap:10px}
   [data-theme="dark"] .install-banner{background:#2a1f00;border-color:#6a5000;color:#f0c060}
   .install-banner-close{margin-left:auto;cursor:pointer;opacity:.5;font-size:18px;line-height:1;flex-shrink:0}
-
-  /* Spinner */
   .spin{display:inline-block;width:12px;height:12px;border-radius:50%;border:2px solid var(--border);border-top-color:var(--muted);animation:spin .7s linear infinite;vertical-align:middle}
   @keyframes spin{to{transform:rotate(360deg)}}
+  .error-note{font-size:11px;color:var(--muted);padding:4px 0 2px;font-style:italic}
 </style>
 </head>
 <body>
@@ -120,7 +102,7 @@
   </div>
   <div class="search-bar" id="search-bar">
     <div class="search-inner">
-      <span class="search-icon">🔍</span>
+      <span style="color:var(--muted);font-size:15px;flex-shrink:0">🔍</span>
       <input class="search-input" id="search-input" type="search" placeholder="Search headlines…" autocomplete="off" autocorrect="off" spellcheck="false">
       <span class="search-clear" id="search-clear">×</span>
     </div>
@@ -142,11 +124,16 @@
 </div>
 
 <script>
-// ── Constants ──────────────────────────────────────────────────────────────
-const PROXY      = 'https://allorigins.win/get?disableCache=true&url=';
 const KEY_TOPICS = 'digest-topics-v2';
 const KEY_BANNER = 'digest-banner-dismissed';
 const KEY_THEME  = 'digest-theme-v1';
+
+// Three proxy strategies — tried in order until one works
+const PROXIES = [
+  url => `https://api.allorigins.win/get?disableCache=true&url=${encodeURIComponent(url)}`,
+  url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+  url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+];
 
 const COLORS = [
   {bg:'#f0edff',text:'#3d2fa0',dot:'#7c6fe0',dbg:'#1e1a3a',dt:'#b8b0ff'},
@@ -159,59 +146,25 @@ const COLORS = [
   {bg:'#f5f0ff',text:'#4a1080',dot:'#9060d0',dbg:'#1e0f30',dt:'#c090ff'},
 ];
 
-// Primary feeds per topic — using highly reliable sources
+// Reliable RSS feeds per topic
 const FEEDS = {
-  'Technology': [
-    'https://feeds.arstechnica.com/arstechnica/index',
-    'https://www.wired.com/feed/rss',
-  ],
-  'World News': [
-    'https://feeds.bbci.co.uk/news/world/rss.xml',
-    'https://feeds.npr.org/1004/rss.xml',
-  ],
-  'Finance': [
-    'https://feeds.bloomberg.com/markets/news.rss',
-    'https://feeds.bbci.co.uk/news/business/rss.xml',
-  ],
-  'Science': [
-    'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml',
-    'https://feeds.arstechnica.com/arstechnica/science',
-  ],
-  'Politics': [
-    'https://feeds.bbci.co.uk/news/politics/rss.xml',
-    'https://feeds.npr.org/1014/rss.xml',
-  ],
-  'Sports': [
-    'https://feeds.bbci.co.uk/sport/rss.xml',
-    'https://feeds.npr.org/1055/rss.xml',
-  ],
-  'Health': [
-    'https://feeds.bbci.co.uk/news/health/rss.xml',
-    'https://feeds.npr.org/1128/rss.xml',
-  ],
-  'AI': [
-    'https://feeds.arstechnica.com/arstechnica/index',
-    'https://www.wired.com/feed/tag/artificial-intelligence/rss',
-  ],
-  'Business': [
-    'https://feeds.bbci.co.uk/news/business/rss.xml',
-    'https://feeds.npr.org/1006/rss.xml',
-  ],
-  'Climate': [
-    'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml',
-    'https://feeds.npr.org/1025/rss.xml',
-  ],
-  'Entertainment': [
-    'https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml',
-    'https://feeds.npr.org/1045/rss.xml',
-  ],
+  'Technology':    ['https://feeds.arstechnica.com/arstechnica/index','https://www.wired.com/feed/rss'],
+  'World News':    ['https://feeds.bbci.co.uk/news/world/rss.xml','https://feeds.npr.org/1004/rss.xml'],
+  'Finance':       ['https://feeds.bbci.co.uk/news/business/rss.xml','https://feeds.npr.org/1006/rss.xml'],
+  'Science':       ['https://feeds.bbci.co.uk/news/science_and_environment/rss.xml','https://feeds.arstechnica.com/arstechnica/science'],
+  'Politics':      ['https://feeds.bbci.co.uk/news/politics/rss.xml','https://feeds.npr.org/1014/rss.xml'],
+  'Sports':        ['https://feeds.bbci.co.uk/sport/rss.xml','https://feeds.npr.org/1055/rss.xml'],
+  'Health':        ['https://feeds.bbci.co.uk/news/health/rss.xml','https://feeds.npr.org/1128/rss.xml'],
+  'AI':            ['https://feeds.arstechnica.com/arstechnica/index','https://www.wired.com/feed/rss'],
+  'Business':      ['https://feeds.bbci.co.uk/news/business/rss.xml','https://feeds.npr.org/1006/rss.xml'],
+  'Climate':       ['https://feeds.bbci.co.uk/news/science_and_environment/rss.xml','https://feeds.npr.org/1025/rss.xml'],
+  'Entertainment': ['https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml','https://feeds.npr.org/1045/rss.xml'],
 };
 const FALLBACK = ['https://feeds.bbci.co.uk/news/rss.xml','https://feeds.npr.org/1001/rss.xml'];
 
-// ── State ──────────────────────────────────────────────────────────────────
-let topics      = loadTopics();
-let adding      = false;
-let loadingSet  = new Set();
+let topics     = loadTopics();
+let adding     = false;
+let loadingSet = new Set();
 let searchQuery = '';
 
 function loadTopics(){try{const s=localStorage.getItem(KEY_TOPICS);if(s)return JSON.parse(s);}catch{}return['Technology','World News','Finance','Science'];}
@@ -226,7 +179,6 @@ function isDark(){return document.documentElement.getAttribute('data-theme')==='
   document.getElementById('dark-btn').textContent=saved==='dark'?'☀️':'🌙';
   document.getElementById('theme-color-meta').content=saved==='dark'?'#131313':'#faf9f6';
 })();
-
 document.getElementById('dark-btn').addEventListener('click',()=>{
   const next=isDark()?'light':'dark';
   document.documentElement.setAttribute('data-theme',next);
@@ -237,7 +189,14 @@ document.getElementById('dark-btn').addEventListener('click',()=>{
 });
 
 // ── Helpers ────────────────────────────────────────────────────────────────
-function stripTags(s){return(s||'').replace(/<!\[CDATA\[|\]\]>/g,'').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#039;/g,"'").replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim();}
+function stripTags(s){
+  return(s||'')
+    .replace(/<!\[CDATA\[/g,'').replace(/\]\]>/g,'')
+    .replace(/<[^>]*>/g,'')
+    .replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>')
+    .replace(/&quot;/g,'"').replace(/&#039;/g,"'").replace(/&nbsp;/g,' ')
+    .replace(/\s+/g,' ').trim();
+}
 function timeAgo(str){
   if(!str)return'';
   const d=new Date(str),diff=Math.floor((Date.now()-d)/1000);
@@ -248,41 +207,66 @@ function timeAgo(str){
   return Math.floor(diff/86400)+'d ago';
 }
 function safeAttr(s){return(s||'').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-function highlight(text,q){
-  if(!q)return text;
-  return text.replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>');
-}
-function getText(el,tag){const n=el.querySelector(tag);return n?stripTags(n.textContent||n.innerHTML):''}
-function getAttr(el,tag,attr){const n=el.querySelector(tag);return n?(n.getAttribute(attr)||''):''}
+function hl(text,q){if(!q)return text;return text.replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>');}
 
-// ── RSS Fetch & Parse ──────────────────────────────────────────────────────
-async function fetchFeed(feedUrl){
-  const url=PROXY+encodeURIComponent(feedUrl);
-  const res=await fetch(url,{signal:AbortSignal.timeout(8000)});
-  if(!res.ok)throw new Error('proxy '+res.status);
-  const json=await res.json();
-  const xml=json.contents;
-  if(!xml)throw new Error('empty');
+// ── Proxy fetch with fallback ──────────────────────────────────────────────
+async function proxyFetch(feedUrl){
+  let lastErr;
+  for(const makeUrl of PROXIES){
+    try{
+      const proxyUrl=makeUrl(feedUrl);
+      const res=await fetch(proxyUrl,{signal:AbortSignal.timeout(10000)});
+      if(!res.ok)throw new Error('HTTP '+res.status);
+      const ct=res.headers.get('content-type')||'';
+      // allorigins returns JSON wrapper; others return raw XML
+      if(ct.includes('application/json')||proxyUrl.includes('allorigins')){
+        const j=await res.json();
+        if(j&&j.contents)return j.contents;
+        throw new Error('empty allorigins response');
+      }
+      return await res.text();
+    }catch(e){lastErr=e;}
+  }
+  throw lastErr||new Error('all proxies failed');
+}
+
+// ── RSS / Atom parser ──────────────────────────────────────────────────────
+function parseXml(xml,feedUrl){
   const doc=new DOMParser().parseFromString(xml,'text/xml');
   if(doc.querySelector('parsererror'))throw new Error('parse error');
-
-  // Support both RSS <item> and Atom <entry>
-  const items=[...doc.querySelectorAll('item, entry')];
-  const channelTitle=getText(doc,'channel > title')||getText(doc,'feed > title')||(new URL(feedUrl).hostname.replace('www.',''));
+  const items=[...doc.querySelectorAll('item,entry')];
+  const channelTitle=
+    doc.querySelector('channel>title')?.textContent||
+    doc.querySelector('feed>title')?.textContent||
+    (new URL(feedUrl).hostname.replace('www.',''));
 
   return items.slice(0,5).map(item=>{
-    const title=getText(item,'title');
-    const rawDesc=item.querySelector('description,summary,content')?.textContent||'';
+    const title=stripTags(item.querySelector('title')?.textContent||'');
+    const descEl=item.querySelector('description,summary,content\\:encoded,content');
+    const rawDesc=descEl?.textContent||descEl?.innerHTML||'';
     const summary=stripTags(rawDesc);
     const trimmed=summary.length>200?summary.slice(0,200)+'…':summary;
-    const link=getText(item,'link')||getAttr(item,'link','href')||getText(item,'guid')||'#';
-    const pubDate=getText(item,'pubDate')||getText(item,'published')||getText(item,'updated')||'';
+    // link: prefer <link href="..."> (Atom) then text content then guid
+    const linkEl=item.querySelector('link');
+    const link=linkEl?.getAttribute('href')||
+                stripTags(linkEl?.textContent||'')||
+                stripTags(item.querySelector('guid')?.textContent||'')||'#';
+    const pubDate=
+      item.querySelector('pubDate')?.textContent||
+      item.querySelector('published')?.textContent||
+      item.querySelector('updated')?.textContent||'';
     return{title,summary:trimmed,link,pubDate,source:channelTitle};
-  }).filter(x=>x.title);
+  }).filter(x=>x.title&&x.title.length>0);
+}
+
+async function fetchFeed(feedUrl){
+  const xml=await proxyFetch(feedUrl);
+  return parseXml(xml,feedUrl);
 }
 
 async function fetchTopic(topic){
-  const urls=(FEEDS[topic]||FALLBACK);
+  const urls=FEEDS[topic]||FALLBACK;
+  // Try feeds concurrently; take whichever succeeds
   const results=await Promise.allSettled(urls.map(fetchFeed));
   const all=results.flatMap(r=>r.status==='fulfilled'?r.value:[]);
   const seen=new Set();
@@ -290,16 +274,16 @@ async function fetchTopic(topic){
 }
 
 // ── Search ─────────────────────────────────────────────────────────────────
-const searchBar   =document.getElementById('search-bar');
-const searchInput =document.getElementById('search-input');
-const searchClear =document.getElementById('search-clear');
-const searchInfo  =document.getElementById('search-info');
-const noResults   =document.getElementById('no-results');
+const searchBar=document.getElementById('search-bar');
+const searchInput=document.getElementById('search-input');
+const searchClear=document.getElementById('search-clear');
+const searchInfo=document.getElementById('search-info');
+const noResults=document.getElementById('no-results');
 
 document.getElementById('search-btn').addEventListener('click',()=>{
   const open=!searchBar.classList.contains('open');
   searchBar.classList.toggle('open',open);
-  if(open)searchInput.focus(); else resetSearch();
+  if(open)searchInput.focus();else resetSearch();
 });
 searchInput.addEventListener('input',()=>{
   searchQuery=searchInput.value.trim();
@@ -314,22 +298,20 @@ searchClear.addEventListener('click',()=>{
 function resetSearch(){searchInput.value='';searchQuery='';searchClear.classList.remove('show');applySearch();}
 
 function applySearch(){
-  const q=searchQuery.toLowerCase();
-  let total=0;
+  const q=searchQuery.toLowerCase();let total=0;
   topics.forEach(topic=>{
-    const sec=document.getElementById('sec-'+topic);
-    if(!sec)return;
+    const sec=document.getElementById('sec-'+topic);if(!sec)return;
     let vis=0;
     sec.querySelectorAll('.story-card').forEach(card=>{
       const h=card.dataset.h||'',s=card.dataset.s||'',src=card.dataset.src||'';
-      const match=!q||h.toLowerCase().includes(q)||s.toLowerCase().includes(q)||src.toLowerCase().includes(q);
+      const match=!q||[h,s,src].some(x=>x.toLowerCase().includes(q));
       card.classList.toggle('hidden',!match);
       if(match){
         vis++;total++;
         const hEl=card.querySelector('.story-headline');
         const sEl=card.querySelector('.story-summary');
-        if(hEl)hEl.innerHTML=highlight(h,searchQuery);
-        if(sEl&&s)sEl.innerHTML=highlight(s,searchQuery);
+        if(hEl)hEl.innerHTML=hl(h,searchQuery);
+        if(sEl&&s)sEl.innerHTML=hl(s,searchQuery);
       }
     });
     sec.classList.toggle('hidden',q.length>0&&vis===0);
@@ -339,16 +321,14 @@ function applySearch(){
     noResults.classList.toggle('show',total===0);
     document.getElementById('no-results-msg').textContent='No stories match "'+searchQuery+'"';
   }else{
-    searchInfo.textContent='';
-    noResults.classList.remove('show');
-    topics.forEach(t=>{const s=document.getElementById('sec-'+t);if(s)s.classList.remove('hidden');});
+    searchInfo.textContent='';noResults.classList.remove('show');
+    topics.forEach(t=>{document.getElementById('sec-'+t)?.classList.remove('hidden');});
   }
 }
 
-// ── Render topics bar ──────────────────────────────────────────────────────
+// ── Topics bar ─────────────────────────────────────────────────────────────
 function renderTopics(){
-  const row=document.getElementById('topics-row');
-  row.innerHTML='';
+  const row=document.getElementById('topics-row');row.innerHTML='';
   const d=isDark();
   topics.forEach((t,i)=>{
     const c=col(i);
@@ -357,15 +337,13 @@ function renderTopics(){
     pill.style.cssText=`background:${d?c.dbg:c.bg};color:${d?c.dt:c.text};border-color:${d?c.dbg:c.bg}`;
     pill.innerHTML=`<span class="topic-dot" style="background:${c.dot}"></span>${t}<span class="topic-remove">×</span>`;
     pill.querySelector('.topic-remove').addEventListener('click',e=>{
-      e.stopPropagation();
-      topics=topics.filter(x=>x!==t);saveTopics();renderTopics();
+      e.stopPropagation();topics=topics.filter(x=>x!==t);saveTopics();renderTopics();
       document.getElementById('sec-'+t)?.remove();
     });
     row.appendChild(pill);
   });
   if(adding){
-    const wrap=document.createElement('span');
-    wrap.className='add-input-wrap';
+    const wrap=document.createElement('span');wrap.className='add-input-wrap';
     wrap.innerHTML='<input id="ti" placeholder="e.g. Climate" maxlength="30"><button id="tok">Add</button><button id="tcancel">Cancel</button>';
     row.appendChild(wrap);
     const inp=wrap.querySelector('#ti');inp.focus();
@@ -373,8 +351,7 @@ function renderTopics(){
       const v=inp.value.trim();
       if(v&&!topics.includes(v)){
         topics.push(v);saveTopics();adding=false;renderTopics();
-        const skel=makeSkeleton(v,topics.length-1);
-        document.getElementById('stories-container').appendChild(skel);
+        document.getElementById('stories-container').appendChild(makeSkeleton(v,topics.length-1));
         loadTopic(v,topics.length-1);
       }else{adding=false;renderTopics();}
     };
@@ -382,36 +359,28 @@ function renderTopics(){
     wrap.querySelector('#tcancel').addEventListener('click',()=>{adding=false;renderTopics();});
     inp.addEventListener('keydown',e=>{if(e.key==='Enter')doAdd();if(e.key==='Escape'){adding=false;renderTopics();}});
   }else{
-    const a=document.createElement('span');
-    a.className='add-pill';a.textContent='+ Add topic';
-    a.addEventListener('click',()=>{adding=true;renderTopics();});
-    row.appendChild(a);
+    const a=document.createElement('span');a.className='add-pill';a.textContent='+ Add topic';
+    a.addEventListener('click',()=>{adding=true;renderTopics();});row.appendChild(a);
   }
 }
 
-// ── Render feed ────────────────────────────────────────────────────────────
+// ── Feed rendering ─────────────────────────────────────────────────────────
 function makeSkeleton(topic,i){
-  const c=col(i);
-  const div=document.createElement('div');
+  const c=col(i);const div=document.createElement('div');
   div.className='topic-section';div.id='sec-'+topic;
-  div.innerHTML=`
-    <div class="section-header">
-      <span class="section-dot" style="background:${c.dot}"></span>
-      <span class="section-title">${topic}</span>
-      <span class="section-line"></span>
-    </div>
-    ${[1,2,3].map(()=>`<div class="skeleton-card"><div class="skeleton" style="height:14px;width:70%;margin-bottom:9px"></div><div class="skeleton" style="height:11px;width:90%;margin-bottom:5px"></div><div class="skeleton" style="height:11px;width:58%"></div></div>`).join('')}`;
+  div.innerHTML=`<div class="section-header"><span class="section-dot" style="background:${c.dot}"></span><span class="section-title">${topic}</span><span class="section-line"></span></div>`+
+    [1,2,3].map(()=>`<div class="skeleton-card"><div class="skeleton" style="height:14px;width:70%;margin-bottom:9px"></div><div class="skeleton" style="height:11px;width:90%;margin-bottom:5px"></div><div class="skeleton" style="height:11px;width:58%"></div></div>`).join('');
   return div;
 }
 
-function renderStories(topic,i,stories){
-  const sec=document.getElementById('sec-'+topic);
-  if(!sec)return;
+function renderStories(topic,i,stories,errMsg){
+  const sec=document.getElementById('sec-'+topic);if(!sec)return;
   const c=col(i);const d=isDark();
   const tagBg=d?c.dbg:c.bg;const tagTx=d?c.dt:c.text;
   let html='';
   if(!stories||!stories.length){
-    html='<div class="no-stories">No stories found — try refreshing.</div>';
+    html=`<div class="no-stories">No stories found — try refreshing.</div>`;
+    if(errMsg)html+=`<div class="error-note">${errMsg}</div>`;
   }else{
     stories.forEach(s=>{
       const ta=timeAgo(s.pubDate);
@@ -423,27 +392,26 @@ function renderStories(topic,i,stories){
         </div>
         ${s.summary?`<div class="story-summary">${s.summary}</div>`:''}
         <div class="story-meta">
-          <span>${s.source}</span>
-          ${ta?`<span>·</span><span>${ta}</span>`:''}
+          <span>${s.source}</span>${ta?`<span>·</span><span>${ta}</span>`:''}
           <span class="story-meta-arrow">↗</span>
         </div>
       </a>`;
     });
   }
-  sec.innerHTML=`
-    <div class="section-header">
-      <span class="section-dot" style="background:${c.dot}"></span>
-      <span class="section-title">${topic}</span>
-      <span class="section-line"></span>
-    </div>${html}`;
+  sec.innerHTML=`<div class="section-header"><span class="section-dot" style="background:${c.dot}"></span><span class="section-title">${topic}</span><span class="section-line"></span></div>${html}`;
   if(searchQuery)applySearch();
 }
 
-// ── Load & refresh ─────────────────────────────────────────────────────────
+// ── Load ───────────────────────────────────────────────────────────────────
 async function loadTopic(topic,i){
   loadingSet.add(topic);updateBtn();
-  try{renderStories(topic,i,await fetchTopic(topic));}
-  catch(e){console.warn(topic,e);renderStories(topic,i,[]);}
+  try{
+    const stories=await fetchTopic(topic);
+    renderStories(topic,i,stories);
+  }catch(e){
+    console.error(topic,e);
+    renderStories(topic,i,[],e.message);
+  }
   loadingSet.delete(topic);updateBtn();
 }
 
@@ -451,40 +419,31 @@ function updateBtn(){
   const btn=document.getElementById('refresh-btn');
   const icon=document.getElementById('refresh-icon');
   if(loadingSet.size>0){
-    btn.classList.add('loading');
-    icon.className='spin';icon.textContent='';
+    btn.classList.add('loading');icon.className='spin';icon.textContent='';
   }else{
-    btn.classList.remove('loading');
-    icon.className='';icon.textContent='↻';
+    btn.classList.remove('loading');icon.className='';icon.textContent='↻';
   }
 }
 
 function refreshAll(){
   if(loadingSet.size>0)return;
   resetSearch();
-  const c=document.getElementById('stories-container');
-  c.innerHTML='';
+  const c=document.getElementById('stories-container');c.innerHTML='';
   topics.forEach((t,i)=>c.appendChild(makeSkeleton(t,i)));
   topics.forEach((t,i)=>loadTopic(t,i));
 }
 document.getElementById('refresh-btn').addEventListener('click',refreshAll);
 
 // ── Install banner ─────────────────────────────────────────────────────────
-function showBanner(){
+(function(){
   if(localStorage.getItem(KEY_BANNER))return;
   if(!/iphone|ipad|ipod/i.test(navigator.userAgent)||window.navigator.standalone)return;
-  document.getElementById('install-hint').innerHTML=`
-    <div class="install-banner">
-      <span style="font-size:20px;flex-shrink:0;margin-top:1px">📲</span>
-      <span>Add to home screen: tap <strong>Share</strong> → <strong>Add to Home Screen</strong> in Safari.</span>
-      <span class="install-banner-close" onclick="this.closest('.install-banner').remove();localStorage.setItem('${KEY_BANNER}','1')">×</span>
-    </div>`;
-}
+  document.getElementById('install-hint').innerHTML=`<div class="install-banner"><span style="font-size:20px;flex-shrink:0;margin-top:1px">📲</span><span>Add to home screen: tap <strong>Share</strong> → <strong>Add to Home Screen</strong> in Safari.</span><span class="install-banner-close" onclick="this.closest('.install-banner').remove();localStorage.setItem('${KEY_BANNER}','1')">×</span></div>`;
+})();
 
 // ── Boot ───────────────────────────────────────────────────────────────────
 document.getElementById('date-label').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
 renderTopics();
-showBanner();
 const container=document.getElementById('stories-container');
 topics.forEach((t,i)=>container.appendChild(makeSkeleton(t,i)));
 topics.forEach((t,i)=>loadTopic(t,i));
